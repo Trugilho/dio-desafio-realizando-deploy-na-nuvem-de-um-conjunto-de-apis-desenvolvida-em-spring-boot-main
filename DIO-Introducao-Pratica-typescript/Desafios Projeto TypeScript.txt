@@ -1,0 +1,384 @@
+Desafio Projeto TypeScript
+DESCRIÇÃO
+Desafio de Projeto Bootcamp Geração Tech Unimed BH:
+Criação de projeto em TypeScript com abordagem prática.
+Desafio 1: Como podemos rodar código em um arquivo .ts sem causar erros
+
+Desafio 2: Como podemos melhorar o código usando o TS.
+
+Desafio 3: Identificar erros de código e corrigir em um arquivo TS.
+
+Desafio 4: A ideia dessa atividade é criar um aplicativo que:
+ - Busca filmes.
+ - Apresenta uma lista com os resultados pesquisados.
+ - Permite a criação de lista de filmes e posterior adição de filmes nela.
+
+Criar seu próprio repositório no GitHub para versionar suas soluções e, de quebra, aumentar seu portfolio de tecnologias/conhecimentos.
+
+
+
+
+Crie um projeto em TypeScript com uma abordagem totalmente prática. Para isso, o expert apresenta os tipos e padrões mais utilizados no desenvolvimento com essa linguagem. Por fim, você é desafiado a resolver alguns desafios disponibilizados no GitHub do expert (https://github.com/lira1705/mentoria-typescript/tree/main/src/desafios). Sendo assim, crie seu próprio repositório no GitHub para versionar suas soluções e, de quebra, aumentar seu portfolio de tecnologias/conhecimentos.
+
+TypeScriptGit
+Full-Stack
+Avançado
+ESPECIALISTA
+author
+João Santos
+Software Engineer, Take Blip
+
+
+Desafio 1 TS:
+// Como podemos rodar isso em um arquivo .ts sem causar erros?
+
+let  empregado  =  { } ;
+empregado . código  =  10 ;
+empregado . nome  =  "João" ;
+
+-------
+interface empregado {
+    codigo: number,
+    nome: string,
+    idade?: number,
+    profissao?: string 
+}
+
+const empregado: empregado = {
+    codigo: 10,
+    nome: 'João'
+}
+
+
+Desafio 2 TS:
+// Como podemos melhorar o esse usando o código TS?
+
+let  pessoa1  =  { } ;
+pessoa1 . nome  =  "maria" ;
+pessoa1 . idade  =  29 ;
+pessoa1 . profissao  =  "atriz"
+
+let  pessoa2  =  { }
+pessoa2 . nome  =  "roberto" ;
+pessoa2 . idade  =  19 ;
+pessoa2 . profissao  =  "Padeiro" ;
+
+let  pessoa3  =  {
+    nome : "laura" ,
+    idade : "32" ,
+    profissao : "Atriz"
+} ;
+
+let  pessoa4  =  {
+    nome =  "carlos" ,
+    idade =  19 ,
+    profissao =  "padeiro"
+}
+
+----------------------
+interface pessoa {
+    nome: string,
+    idade: number,
+    profissao: Profissao 
+}
+
+enum Profissao { 
+    Atriz,
+    Padeiro,
+    Motorista
+}
+
+const pessoa1: pessoa = {
+    nome: 'maria',
+    idade: 29,
+    profissao: Profissao.Atriz 
+}
+
+const pessoa2: pessoa = {
+    nome: 'roberto',
+    idade: 19,
+    profissao: Profissao.Padeiro 
+}
+
+const pessoa3: pessoa = {
+    nome: 'laura',
+    idade: 32,
+    profissao: Profissao.Atriz 
+}
+
+const pessoa4: pessoa = {
+    nome: 'carlos',
+    idade: 19,
+    profissao: Profissao.Padeiro 
+}
+
+Desafio 3 TS:
+// O código abaixo tem alguns erros e não funciona como Deveria. Você pode identificar quais são e corrigi-los em um arquivo TS?
+
+let  botaoAtualizar  =  document . getElementById ( 'atualizar-saldo' ) ;
+let  botaoLimpar  =  document . getElementById ( 'limpar-saldo' ) ;
+let  soma  =  documento . getElementById ( 'soma' );
+let  campoSaldo  =  documento . getElementById ( 'campo-saldo' ) ;
+
+campoSaldo . innerHTML  =  0
+
+function  somarAoSaldo ( soma )  {
+    campoSaldo . innerHTML  +=  soma ;
+}
+
+function  limparSaldo ( )  {
+    campoSaldo . innerHTML  =  '' ;
+}
+
+botaoAtualizar . addEventListener ( 'click' ,  function  ( )  {
+    somarAoSaldo ( valor soma . ) ;
+} ) ;
+
+botaoLimpar . addEventListener ( 'click' ,  function  ( )  {
+    limparSaldo ( ) ;
+} ) ;
+
+/**
+    <h4>Valor a ser adicionado: <input id="soma"> </h4>
+    <button id="atualizar-saldo">Atualizar saldo</button>
+    <button id="limpar-saldo">Limpar seu saldo</button>
+    <h1>"Seu saldo é: " <span id="campo-saldo"></span></h1>
+*/
+
+--------------------------
+let  botaoAtualizar  =  document . getElementById ( 'atualizar-saldo' ) ;
+let  botaoLimpar  =  document . getElementById ( 'limpar-saldo' ) ;
+let  soma  =  documento . getElementById ( 'soma' ) as HTMLInputElement;
+let  campoSaldo  =  documento . getElementById ( 'campo-saldo' ) ;
+let saldoTotal = 0;
+
+limparSaldo();
+
+campoSaldo . innerHTML  =  0
+
+function  somarAoSaldo ( soma: number )  {
+    if (campoSaldo) {
+        saldoTotal += soma
+        campoSaldo . innerHTML  =  saldoTotal.toString();
+        limparCampoSoma();
+    }
+}
+
+function  limparSaldo ( )  {
+    if (campoSaldo) {
+        saldoTotal = 0;
+        campoSaldo . innerHTML  =  saldoTotal.toString();
+    }
+}
+if (botaoAtualizar) {
+    botaoAtualizar . addEventListener ( 'click' , ( ) =>  {
+    somarAoSaldo ( number(soma.value)) ;
+} ) ;
+
+botaoLimpar . addEventListener ( 'click' , ( ) =>  {
+    limparSaldo ( ) ;
+} ) ;
+
+/**
+    <h4>Valor a ser adicionado: <input id="soma"> </h4>
+    <button id="atualizar-saldo">Atualizar saldo</button>
+    <button id="limpar-saldo">Limpar seu saldo</button>
+    <h1>"Seu saldo é: " <span id="campo-saldo"></span></h1>
+*/
+
+
+Desafio 4 TS:
+// Um ​​desenvolvedor criar um projeto que consome uma base de dados de filme do TMDB para um organizador de filmes, mas desistiu
+// pois o projeto é seu código inviável Você pode usar o tipo para organizar esse código e a partir daí aprimorar o que foi feito?
+
+// A ideia dessa atividade é criar um aplicativo que:
+// - Busca filmes
+// - Apresenta uma lista com os resultados pesquisados
+// - Permite a criação de lista de filmes e posterior adição de filmes nela
+
+// Todas as exigências encontradas para as atividades acima já estão prontas, mas a implementação delas ficou pela metade (não vou dar tudo de graça).
+// Atenção para o listener do botão login-button que devolve o sessionID do usuário
+// É necessário fazer um cadastro no https://www.themoviedb.org/ e seguir a documentação do site para entender como gerar uma API key https://developers.themoviedb.org/3/getting-started/introduction
+
+var  apiKey  =  '3f301be7381a03ad8d352314dcc3ec1d' ;
+let  apiKey ;
+let  requestToken ;
+let  nome de  usuário ;
+let  senha ;
+let  sessionId ;
+let  listId  =  '7101979' ;
+
+let  loginButton  =  document . getElementById ( 'botão de login' ) ;
+let  searchButton  =  document . getElementById ( 'botão de busca' ) ;
+let  searchContainer  =  document . getElementById ( 'search-container' ) ;
+
+botão de login . addEventListener ( 'click' ,  assíncrono  ( )  =>  {
+  await  criarRequestToken ( ) ;
+  aguarde  logar ( ) ;
+  aguarde  criarSessao ( ) ;
+} )
+
+botão de pesquisa . addEventListener ( 'click' ,  assíncrono  ( )  =>  {
+  let  lista  =  documento . getElementById ( "lista" ) ;
+  if  ( lista )  {
+    lista . externalHTML  =  "" ;
+  }
+  let  query  =  document . getElementById ( 'pesquisa' ) . valor ;
+  let  listaDeFilmes  =  esperar  procurarFilme ( consulta ) ;
+  let  ul  =  documento . createElement ( 'ul' ) ;
+  ul . id  =  "lista"
+  for  ( const  item  da  listaDeFilmes . resultados )  {
+    let  li  =  documento . createElement ( 'li' ) ;
+    li . appendChild ( document . createTextNode ( item . original_title ) )
+    ul . appendChild ( li )
+  }
+  console . log ( listaDeFilmes ) ;
+  searchContainer . appendChild ( ul ) ;
+} )
+
+function  preencherSenha ( )  {
+  senha  =  documento . getElementById ( 'senha' ) . valor ;
+  validLoginButton ( ) ;
+}
+
+função  preencherLogin ( )  {
+  nome de usuário  =   documento . getElementById ( 'login' ) . valor ;
+  validLoginButton ( ) ;
+}
+
+function  preencherApi ( )  {
+  apiKey  =  documento . getElementById ( 'api-key' ) . valor ;
+  validLoginButton ( ) ;
+}
+
+function  validLoginButton ( )  {
+  if  ( senha  && nome de  usuário  &&  apiKey )  {
+    botão de login . desabilitado  =  falso ;
+  }  senão  {
+    botão de login . desabilitado  =  verdadeiro ;
+  }
+}
+
+class  HttpClient  {
+   get assíncrono  estático ( { url , method , body = null } ) {  
+    return  new  Promise ( ( resolve ,  rejeita )  =>  {
+      let  pedido  =  new  XMLHttpRequest ( ) ;
+      pedido . open ( método ,  url ,  true ) ;
+
+      pedido . carregar  =  ( )  =>  {
+        if  ( request . status  >=  200  &&  request . status  <  300 )  {
+          resolver ( JSON.parse ( solicitação.respostaTexto ) ) ; _ _ _ _
+        }  senão  {
+          rejeitar ( {
+            estado : pedido . estado ,
+            statusText : pedido . statusText
+          } )
+        }
+      }
+      pedido . onerro  =  ( )  =>  {
+        rejeitar ( {
+          estado : pedido . estado ,
+          statusText : pedido . statusText
+        } )
+      }
+
+      if  ( corpo )  {
+        pedido . setRequestHeader ( "Content-Type" ,  "application/json;charset=UTF-8" ) ;
+        corpo  =  JSON . stringify ( corpo ) ;
+      }
+      pedido . enviar ( corpo ) ;
+    } )
+  }
+}
+
+ função  assíncrona procurarFilme ( consulta )  {
+  consulta  =  encodeURI ( consulta )
+  consola . log ( consulta )
+  let  resultado  =  aguardar  HttpClient . obter ( {
+    url : `https://api.themoviedb.org/3/search/movie?api_key= ${ apiKey } &query= ${ query } ` ,
+    método : "GET"
+  } )
+  retornar  resultado
+}
+
+ função  assíncrona adicionarFilme ( filmeId )  {
+  let  resultado  =  aguardar  HttpClient . obter ( {
+    url : `https://api.themoviedb.org/3/movie/ ${ filmeId } ?api_key= ${ apiKey } &language=en-US` ,
+    método : "GET"
+  } )
+  consola . log ( resultado ) ;
+}
+
+ função  assíncrona criarRequestToken  ( )  {
+  let  resultado  =  aguardar  HttpClient . obter ( {
+    url : `https://api.themoviedb.org/3/authentication/token/new?api_key= ${ apiKey } ` ,
+    método : "GET"
+  } )
+  requestToken  =  resultado . request_token
+}
+
+ logar de função  assíncrona ( ) { 
+  aguarde  HttpClient . obter ( {
+    url : `https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key= ${ apiKey } ` ,
+    método : "POST" ,
+    corpo : {
+      nome de usuário : ` ${ nome de usuário } ` ,
+      senha : ` ${ senha } ` ,
+      request_token : ` ${ requestToken } `
+    }
+  } )
+}
+
+ função  assíncrona criarSessao ( )  {
+  let  resultado  =  aguardar  HttpClient . obter ( {
+    url : `https://api.themoviedb.org/3/authentication/session/new?api_key= ${ apiKey } &request_token= ${ requestToken } ` ,
+    método : "GET"
+  } )
+  sessionId  =  resultado . session_id ;
+}
+
+ função  assíncrona criarLista ( nomeDaLista ,  descricao )  {
+  let  resultado  =  aguardar  HttpClient . obter ( {
+    url : `https://api.themoviedb.org/3/list?api_key= ${ apiKey } &session_id= ${ sessionId } ` ,
+    método : "POST" ,
+    corpo : {
+      nome : nomeDaLista ,
+      descrição : descrição ,
+      idioma : "pt-br"
+    }
+  } )
+  console . log ( resultado ) ;
+}
+
+ função  assíncrona adicionarFilmeNaLista ( filmeId ,  listaId )  {
+  let  resultado  =  aguardar  HttpClient . obter ( {
+    url : `https://api.themoviedb.org/3/list/ ${ listaId } /add_item?api_key= ${ apiKey } &session_id= ${ sessionId } ` ,
+    método : "POST" ,
+    corpo : {
+      media_id : filmeId
+    }
+  } )
+  console . log ( resultado ) ;
+}
+
+ função  assíncrona pegarLista ( )  {
+  let  resultado  =  aguardar  HttpClient . obter ( {
+    url : `https://api.themoviedb.org/3/list/ ${ listId } ?api_key= ${ apiKey } ` ,
+    método : "GET"
+  } )
+  console . log ( resultado ) ;
+}
+
+{ /* <div style="display: flex;">
+  <div style="display: flex; largura: 300px; altura: 100px; justificar-conteúdo: espaço entre; flex-direction: coluna;">
+      <input id="login" placeholder="Login" onchange="preencherLogin(event)">
+      <input id="senha" placeholder="Senha" type="password" onchange="preencherSenha(event)">
+      <input id="api-key" placeholder="Api Key" onchange="preencherApi()">
+      <button id="login-button" desativado>Login</button>
+  </div>
+  <div id="search-container" style="margin-left: 20px">
+      <input id="search" placeholder="Escreva...">
+      <button id="search-button">Pesquisar Filme</button>
+  </div>
+</div>*/ }
+
