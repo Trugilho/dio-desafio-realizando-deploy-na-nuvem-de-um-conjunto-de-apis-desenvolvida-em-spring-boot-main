@@ -10,9 +10,16 @@ interface empregado {
     nome: string,
     idade?: number,
     profissao?: string 
-}
+};
 
-const empregado: empregado = {
+let empregado: empregado = {
     codigo: 10,
     nome: 'João'
-}
+};
+
+//ou
+
+let  funcionario2: (codigo: number, nome: string)  =  {
+código: 10 ;
+nome: "João"
+ } ;

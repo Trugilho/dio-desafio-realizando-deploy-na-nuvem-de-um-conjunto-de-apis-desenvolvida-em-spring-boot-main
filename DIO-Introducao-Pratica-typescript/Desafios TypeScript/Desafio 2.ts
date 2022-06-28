@@ -23,7 +23,7 @@ let  pessoa4  =  {
 }
 */
 
-interface pessoa {
+type pessoa {
     nome: string,
     idade: number,
     profissao: Profissao 

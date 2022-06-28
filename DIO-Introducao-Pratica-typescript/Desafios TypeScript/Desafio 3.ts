@@ -32,39 +32,43 @@ botaoLimpar . addEventListener ( 'click' ,  function  ( )  {
 /*
 --------------------------
 */
-
-let  botaoAtualizar  =  document . getElementById ( 'atualizar-saldo' ) ;
-let  botaoLimpar  =  document . getElementById ( 'limpar-saldo' ) ;
-let  soma  =  documento . getElementById ( 'soma' ) as HTMLInputElement;
-let  campoSaldo  =  documento . getElementById ( 'campo-saldo' ) ;
+export {} 
+let  botaoAtualizar  =  document.getElementById ('atualizar-saldo');
+let  botaoLimpar  =  document.getElementById ('limpar-saldo');
+let  soma  =  document.getElementById ('soma')! as HTMLInputElement;
+let  campoSaldo  =  document.getElementById ('campo-saldo');
 let  saldoTotal = 0;
 
 limparSaldo();
 
-campoSaldo . innerHTML  =  0
+campoSaldo.innerHTML  =  0
 
-function  somarAoSaldo ( soma: number )  {
+function  somarAoSaldo (soma: number)  {
     if (campoSaldo) {
         saldoTotal += soma
-        campoSaldo . innerHTML  =  saldoTotal.toString();
-        limparCampoSoma();
+        campoSaldo.innerHTML  =  saldoTotal.toString ();
+        limparCampoSoma ();
     }
 }
 
-function  limparSaldo ( )  {
+function limparCampoSoma () {
+    soma.value = "";
+}
+
+function limparSaldo () {
     if (campoSaldo) {
         saldoTotal = 0;
-        campoSaldo . innerHTML  =  saldoTotal.toString();
+        campoSaldo.innerHTML  =  saldoTotal.toString ();
     }
 }
 if (botaoAtualizar) {
-    botaoAtualizar . addEventListener ( 'click' , ( ) =>  {
-    somarAoSaldo ( number(soma.value)) ;
-} ) ;
+    botaoAtualizar.addEventListener ('click' , () =>  {
+    somarAoSaldo (number(soma.value)) ;
+});
 
-botaoLimpar . addEventListener ( 'click' , ( ) =>  {
-    limparSaldo ( ) ;
-} ) ;
+botaoLimpar.addEventListener('click', () =>  {
+    limparSaldo ();
+});
 
 /**
     <h4>Valor a ser adicionado: <input id="soma"> </h4>
