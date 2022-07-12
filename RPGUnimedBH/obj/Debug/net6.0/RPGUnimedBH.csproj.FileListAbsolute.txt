@@ -1,0 +1,15 @@
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\RPGUnimedBH.csproj.AssemblyReference.cache
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\RPGUnimedBH.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\RPGUnimedBH.AssemblyInfoInputs.cache
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\RPGUnimedBH.AssemblyInfo.cs
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\RPGUnimedBH.csproj.CoreCompileInputs.cache
+C:\ProjetosWEB\Git\RPGUnimedBH\bin\Debug\net6.0\RPGUnimedBH.exe
+C:\ProjetosWEB\Git\RPGUnimedBH\bin\Debug\net6.0\RPGUnimedBH.deps.json
+C:\ProjetosWEB\Git\RPGUnimedBH\bin\Debug\net6.0\RPGUnimedBH.runtimeconfig.json
+C:\ProjetosWEB\Git\RPGUnimedBH\bin\Debug\net6.0\RPGUnimedBH.dll
+C:\ProjetosWEB\Git\RPGUnimedBH\bin\Debug\net6.0\RPGUnimedBH.pdb
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\RPGUnimedBH.dll
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\refint\RPGUnimedBH.dll
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\RPGUnimedBH.pdb
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\RPGUnimedBH.genruntimeconfig.cache
+C:\ProjetosWEB\Git\RPGUnimedBH\obj\Debug\net6.0\ref\RPGUnimedBH.dll
