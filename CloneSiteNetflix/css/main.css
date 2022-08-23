@@ -1,0 +1,267 @@
+/* ===== Basic Styles ===== */
+:root {
+  --background-color: #141414;
+  --background-color-transparent: #141414bb;
+  --main-color: #e50914;
+  --main-text-color: #fff;
+  --secondary-text-color: #aaa;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+html {
+  font-family: Arial, 'Helvetica Neue', Helvetica,  sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  scroll-behavior: smooth;
+}
+
+.body {
+  background-color: var(--background-color);
+  color: var(--main-text-color);
+}
+
+/* === HEADER === */
+.header {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  position: sticky;
+  inset: 0;
+  z-index: 99;
+}
+
+.header__logo {
+  margin-left: 2rem;
+  color: var(--main-color);
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* MENU HAMBURGER ICON */
+.nav__button {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+}
+
+.nav__button__icon {
+  background: var(--main-text-color);
+  display: block;
+  position: relative;
+  height: .2rem;
+  width: 2rem;
+  top: .9rem;
+  left: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.nav__button__icon::before,
+.nav__button__icon::after {
+  background: var(--main-text-color);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 100%;
+}
+
+.nav__button__icon::before {
+  top: -.6rem;
+}
+
+.nav__button__icon::after {
+  bottom: -.6rem;
+}
+
+.nav__control {
+  display: none;
+}
+
+.nav__control:checked ~ label .nav__button__icon {
+  transform: rotate(45deg);
+}
+
+.nav__control:checked ~ label .nav__button__icon::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.nav__control:checked ~ label .nav__button__icon::after {
+  bottom: 0;
+  transform: rotate(90deg);
+}
+
+/* === MAIN NAVIGATION === */
+.nav {
+  background-color: inherit;
+  color: var(--secondary-text-color);
+  height: 100vh;
+  left: -100%;
+  max-width: 18rem;
+  padding: 1.5rem;
+  position: fixed;
+  top: 3.8rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: .1rem;
+  transition: .7s;
+}
+
+.nav__item {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.nav__link {
+  transition: .5s ease all;
+}
+
+.nav__link:hover {
+  color: var(--main-text-color);
+}
+
+.nav__control:checked ~ .nav {
+  left: 0;
+}
+
+/* === SECTIONS === */
+.section {
+  padding: 2rem 1.5rem 0;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  margin-bottom: 1rem;
+}
+
+.section__item {
+  position: relative;
+  display: grid;
+}
+
+.item__image {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 5rem 5rem 2rem;
+  color: var(--secondary-text-color);
+  font-size: .85rem;
+  text-align: center;
+}
+
+/* === SOCIAL LINKS */
+.social {
+  margin-bottom: 2rem;
+}
+
+.social__icon {
+  height: 3rem;
+  width: 3rem;
+  border: .2rem solid var(--secondary-text-color);
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+}
+
+.social__icon:nth-of-type(2) {
+  margin: 0 2rem;
+}
+
+.social__icon:hover {
+  background-color: var(--secondary-text-color);
+  color: var(--background-color);
+}
+
+/* === MODAL === */
+.modal__overlay {
+  background-color: var(--background-color-transparent);
+  height: 100vh;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 100;
+}
+
+.modal {
+  background-color: transparent;
+  height: 90vh;
+  margin: 5vh auto;
+  position: relative;
+  width: 90%;
+}
+
+.modal__close {
+  color: var(--main-text-color);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -.5rem;
+}
+
+/* === MODAL ACTIVE === */
+.modal__overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__media {
+  height: 90%;
+  width: 100%;
+  position: absolute;
+  top: 5%;
+}
+
+/* ===== HEADER & NAVIGATION - LARGE SCREEN */
+@media (min-width: 1000px) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .label {
+    display: none;
+  }
+  
+  .header__logo {
+    margin: 0;
+  }
+  
+  .nav {
+    max-width: unset;
+    width: unset;
+    height: unset;
+    position: unset;
+    padding: 0;
+  }
+  
+  .nav__item {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 3rem;
+  }
+}

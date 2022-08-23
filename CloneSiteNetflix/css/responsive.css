@@ -1,0 +1,9 @@
+@media (max-width: 640px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .spotlight__description {
+    width: 100%;
+  }
+}
