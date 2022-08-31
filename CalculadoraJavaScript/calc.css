@@ -1,0 +1,201 @@
+body {
+    background: #B7BDBD;
+    font-family: verdana, sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    color: #001969;
+    padding: 10px;
+    margin: 2px 2px 2px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    max-width: 100px;
+    max-height: 40px;
+}
+
+#calculadora {
+    width: 40%;
+    background: #5b9a9a;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 20px 10px;
+}
+
+#display {
+    padding: 45px;
+    font-size: 30px;
+    text-align: right;
+    background: #BBD;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#data {
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+    background: #BBD;
+    float: left;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#keyboard {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #5b9a9a;
+    padding: 20px;
+}
+
+#keyboard button {
+    font-size: 24px;
+    font-family: Arial;
+    width: 80px;
+    height: 80px;
+    border-width: 1px;
+    color: #fff;
+    border-color: #566963;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: inset 0px 1px 3px 0px #91b8b3;
+    text-shadow: inset 0px -1px 0px #2b665e;
+    background: linear-gradient(#768d87, #6c7c7c);
+}
+
+#keyboard button:hover {
+    background: linear-gradient(#6c7c7c, #768d87);
+}
+
+.hora {
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+    float: right;
+    border: none;
+    background: #BBD;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.rodapepg {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: Arial;
+    margin: 3% 0% 0% 0%;
+    background: #B7BDBD;
+    width: 100%;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 500px) {
+
+    body {
+        background: #9c9981;
+        font-family: verdana, sans-serif;
+    }
+
+    h1 {
+        font-size: 20px;
+        padding: 10px;
+        margin-left: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+    }
+
+    input {
+        max-width: 50%;
+        max-height: 20px;
+    }
+
+    #calculadora {
+        display: flexbox;
+        width: 200px;*/
+        background: #2196F3;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 20px 20px 10px;
+    }
+
+
+    #display {
+        display: flex;
+        padding: 30px;
+        font-size: 10px;
+        text-align: right;
+        background: #BBD;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 1px;
+    }
+
+    #data {
+        padding: 12px;
+        font-size: 10px;
+        margin-top: 5px;
+        margin-right: 5px;
+        margin-left: 10px;
+        margin-bottom: -20px;
+    }
+
+    #keyboard {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: auto;
+        background-color: #2196F3;
+        padding: 10px;
+        margin-right: -10px;
+    }
+
+    #keyboard button {
+        font-size: 10px;
+        font-family: Arial;
+        width: 40px;
+        height: 40px;
+        border-width: 1px;
+        color: #fff;
+        border-color: #566963;
+        font-weight: bold;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        box-shadow: inset 0px 1px 3px 0px #91b8b3;
+        text-shadow: inset 0px -1px 0px #2b665e;
+        background: linear-gradient(#768d87, #6c7c7c);
+    }
+
+    .hora {
+        /*padding: 5px;
+        /*padding: 5px -15px -15px 50px;*/
+        font-size: 10px;
+        text-align: justify-all;
+        margin-top: -14px;
+        margin-right: 1px;
+        margin-left: 30px;
+    }
+
+    .rodapepg {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: Arial;
+        margin: 3% 0% 0% 0%;
+        background: #87ab03;
+        width: 100%;
+    }
+}
